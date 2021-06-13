@@ -3,7 +3,7 @@
 ## simple to do list using angluar
 
 ## demo
-![demo](https://github.com/mayararaby/To-Do-list-Angular/blob/master/demo.gif)
+![demo](https://github.com/mayararaby/To-Do-list-Angular/blob/master/newDemo.gif)
 
 ## Development server
 
