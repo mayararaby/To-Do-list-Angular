@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-12 col-lg-9 col-xl-9 mt-5 center-card-custom text-center">
+            <div class="card bg-light text-dark shadow p-3 mb-5 bg-white rounded">
+                <h1 class="mt-3">
+                    To-Do List
+                </h1>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="New Task" [value]="newTask" (keyup)="getTask($event)">
+                        <div class="input-group-append">
+                            <button class="btn btn-success add-task" type="submit" (click)="addNewTask()">Add Task</button>
+                        </div>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="custom-width">Number</th>
+                                <th>Task</th>
+                                <th class="custom-width">
+                                    Finish
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-danger" *ngFor="let oneTask of listOfTasks; index as i">
+                                <td class="custom-width Done">{{i+1}}</td>
+                                <td class="Done" *ngIf="oneTask.done===false; else elseBlock">{{oneTask.newTask}}
+                                </td>
+                                <ng-template #elseBlock>
+                                    <td class="Done isDone">
+                                        {{oneTask.newTask}}
+                                    </td>
+                                </ng-template>
+                                <td *ngIf="oneTask.done===false; else btnElse">
+                                    <button type="button" class="btn btn-danger" data-toggle="tooltip" title="Click for delete" (click)="FinishTask(i+1)">Done</button>
+                                </td>
+                                <ng-template #btnElse>
+                                    <button type="button" data-toggle="tooltip" title="Deleted!" class="btn btn-danger m-2" disabled>Done</button>
+                                </ng-template>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

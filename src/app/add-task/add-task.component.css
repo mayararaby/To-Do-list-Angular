@@ -1,0 +1,42 @@
+.center-card-custom {
+    margin: auto;
+}
+
+h1 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.form-control:focus {
+    border-color: #28a745 !important;
+    box-shadow: 0 0 0 0.2rem rgb(40 167 69 / 28%) !important;
+}
+
+.add-task {
+    font-weight: bold;
+}
+
+h1 {
+    color: #0e2f16;
+}
+
+.Done {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.custom-width {
+    width: 20%;
+}
+
+.isDone {
+    text-decoration: line-through;
+    text-decoration-thickness: 0.2em;
+}
+
+table,
+tr,
+td,
+th {
+    text-align: initial
+}
